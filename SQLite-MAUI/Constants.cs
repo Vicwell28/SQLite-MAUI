@@ -1,6 +1,7 @@
 ﻿using SQLite;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,7 +10,7 @@ namespace SQLite_MAUI
 {
 	public static class Constants
 	{
-		private const string DBFileName = "SQLite.db3";
+		public const string DatabaseFilename = "TodoSQLite.db3";
 
 		public const 
 			 SQLiteOpenFlags Flags =
@@ -21,7 +22,9 @@ namespace SQLite_MAUI
 		{
 			get
 			{
-				return Path.Combine(FileSystem.AppDataDirectory, DBFileName);
+				Debug.WriteLine("ESTE ES EL PATH"); 
+				Debug.WriteLine(FileSystem.AppDataDirectory); 
+				return Path.Combine(FileSystem.AppDataDirectory, DatabaseFilename);
 			}
 		}
 	}

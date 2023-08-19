@@ -7,11 +7,9 @@ using System.Threading.Tasks;
 
 namespace SQLite_MAUI.Models
 {
-	public class CustomerPassport
+	public class Order : TableData
 	{
-		[ForeignKey(typeof(Customer))]
 		public int CustomerId { get; set; }
-		[ForeignKey(typeof(Passport))]
-		public int PassportId { get; set; }
+		public DateTime OrderDate { get; set; }
 	}
 }
